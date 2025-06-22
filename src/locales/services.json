@@ -1,0 +1,41 @@
+{
+  "coreServices": [
+    {
+      "name": "Web Design & Development",
+      "description": "Responsive and modern websites, including portfolio, business, and eCommerce sites. Optimized for SEO and fast loading.",
+      "icon": "FaLaptopCode"
+    },
+    {
+      "name": "Mobile App Development",
+      "description": "Cross-platform apps using Flutter for Android & iOS, with a focus on clean UI and strong UX.",
+      "icon": "FaMobileAlt"
+    },
+    {
+      "name": "Desktop Application Development",
+      "description": "Custom software for Windows, including inventory, sales, POS, and utility apps. Lightweight and performance-optimized solutions.",
+      "icon": "FaDesktop"
+    },
+    {
+      "name": "UI/UX Design",
+      "description": "Creation of wireframes, mockups, and prototypes for interactive and intuitive designs. Tools include Figma and Adobe XD.",
+      "icon": "FaPalette"
+    },
+    {
+      "name": "Cross-Platform Development",
+      "description": "Develop single codebase solutions for Web, Mobile & Desktop, focusing on scalable and maintainable architecture using Flutter, React, and Electron.js.",
+      "icon": "FaLayerGroup"
+    },
+    {
+      "name": "Full Project Support for University Students",
+      "description": "End-to-end project development including documentation, UI/UX, and coding, tailored to final-year/university project needs.",
+      "icon": "FaGraduationCap"
+    }
+  ],
+  "languages": [
+    { "name": "English - Professional", "experience": "Professional proficiency with excellent communication and writing skills.", "percentage": 90, "icon": "FaGlobe" },
+    { "name": "Urdu - Native", "experience": "Native proficiency in both spoken and written Urdu.", "percentage": 100, "icon": "FaGlobe" }
+  ],
+  "databases": [
+    { "name": "MongoDB", "experience": "1 year experience", "percentage": 50, "icon": "FaDatabase" }
+  ]
+} 

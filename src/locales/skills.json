@@ -1,0 +1,100 @@
+{
+  "frontend": {
+    "title": "Frontend Development",
+    "skills": [
+      {
+        "name": "HTML5",
+        "description": "Semantic markup, accessibility, and modern HTML features",
+        "icon": "FaHtml5",
+        "progress": 95
+      },
+      {
+        "name": "CSS3",
+        "description": "Flexbox, Grid, Animations, and Responsive Design",
+        "icon": "FaCss3",
+        "progress": 90
+      },
+      {
+        "name": "JavaScript",
+        "description": "ES6+, DOM Manipulation, and Modern JS Features",
+        "icon": "FaJs",
+        "progress": 85
+      },
+      {
+        "name": "React.js",
+        "description": "Hooks, Context API, and Component Architecture",
+        "icon": "FaReact",
+        "progress": 90
+      },
+      {
+        "name": "Vue.js",
+        "description": "Vue 3, Composition API, and Vuex",
+        "icon": "FaVuejs",
+        "progress": 80
+      },
+      {
+        "name": "Bootstrap",
+        "description": "Responsive Grid System and Components",
+        "icon": "FaBootstrap",
+        "progress": 85
+      }
+    ]
+  },
+  "backend": {
+    "title": "Backend Development",
+    "skills": [
+      {
+        "name": "Node.js",
+        "description": "Express.js, RESTful APIs, and Server-side Logic",
+        "icon": "FaNodeJs",
+        "progress": 85
+      },
+      {
+        "name": "Python",
+        "description": "Django, Flask, and Data Processing",
+        "icon": "FaPython",
+        "progress": 80
+      },
+      {
+        "name": "PHP",
+        "description": "Laravel, WordPress, and Custom Solutions",
+        "icon": "FaPhp",
+        "progress": 75
+      }
+    ]
+  },
+  "mobile": {
+    "title": "Mobile & Desktop Development",
+    "skills": [
+      {
+        "name": "React Native",
+        "description": "Cross-platform Mobile App Development",
+        "icon": "FaMobileAlt",
+        "progress": 85
+      },
+      {
+        "name": "Electron",
+        "description": "Cross-platform Desktop Applications",
+        "icon": "FaDesktop",
+        "progress": 80
+      }
+    ]
+  },
+  "design": {
+    "title": "Design & Prototyping",
+    "skills": [
+      {
+        "name": "UI/UX Design",
+        "description": "User Interface and Experience Design",
+        "icon": "FaPalette",
+        "progress": 90
+      },
+      {
+        "name": "Figma",
+        "description": "Interface Design and Prototyping",
+        "icon": "FaLayerGroup",
+        "progress": 85
+      }
+    ]
+  }
+} 

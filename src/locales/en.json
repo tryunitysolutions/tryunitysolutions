@@ -1,0 +1,60 @@
+{
+  "hero": {
+    "name": "Try Unity Solutions",
+    "tagline": "UI/UX Design",
+    "welcome": "Welcome to"
+  },
+  "about": {
+    "title": "About Try Unity Solutions",
+    "description": "Try Unity Solutions is a creative and tech-driven software agency based in Pakistan, dedicated to turning innovative ideas into scalable digital products. We specialize in building websites, mobile apps, desktop applications, and crafting exceptional UI/UX designs that align with modern user expectations and business goals.\n\nWhether you're a startup, a business owner, or a university student looking for professional project development, our expert team delivers clean, optimized, and future-ready solutions — fast, affordable, and high quality.",
+    "servicesTitle": "Our Services",
+    "services": [
+      "Web Design & Development (Responsive, SEO-friendly, Fast)",
+      "Mobile App Development (Cross-platform Flutter apps for Android & iOS)",
+      "Desktop Application Development (Custom Windows software)",
+      "UI/UX Design (Figma, Adobe XD – Interactive, Intuitive Interfaces)",
+      "University Project Support (End-to-end development with documentation)",
+      "Cross-Platform Development (One codebase for Web, App, and Desktop)"
+    ],
+    "skillsTitle": "Technical Skills",
+    "skills": {
+      "frontend": "React.js, Next.js, JavaScript (ES6+), TypeScript, HTML5, CSS3, Material UI, Chakra UI, Framer Motion",
+      "backendAuth": "Firebase (Firestore, Auth, Storage), Node.js (basic)",
+      "mobileDesktop": "Flutter, Dart, GetX, MVC Architecture",
+      "designTools": "Figma, Adobe XD",
+      "otherTools": "Git & GitHub, REST APIs, Responsive Design, UI Animations"
+    }
+  },
+  "contactInfo": {
+    "phone": "+92 313 8703977",
+    "email": "tryunitysolutions@gmail.com",
+    "website": "www.tryunitysolutions.com"
+  },
+  "sections": {
+    "home": "Home",
+    "aboutUs": "About Us",
+    "services": "Services",
+    "skills": "Skills",
+    "portfolio": "Portfolio",
+    "team": "Our Team",
+    "contact": "Contact"
+  },
+  "services": {
+    "coreServicesTitle": "Core Services"
+  },
+  "contactForm": {
+    "name": "Name",
+    "email": "Email",
+    "message": "Message",
+    "sendButton": "Send Message",
+    "findUsOn": "Find Us On",
+    "contactInformation": "Contact Information"
+  },
+  "cursor": {
+    "toggleTheme": "Toggle Theme",
+    "changeLanguage": "Change Language",
+    "goToSection": "Go to Section",
+    "viewMore": "View More Details",
+    "clickAction": "Click Action"
+  }
+}

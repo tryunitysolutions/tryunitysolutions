@@ -1,0 +1,31 @@
+{
+  "members": [
+    {
+      "id": 1,
+      "name": "Alee Raza",
+      "role": "Founder & Cross-Platform Developer",
+      "description": "Expert in Flutter,Dart and Firebase, leads the team in building cross-platform applications with a focus on performance and user experience.",
+      "image": "/pictures/team-1.jpg",
+      "technologies": ["Flutter", "Dart", "Firebase", "Figma", "GetX", "Next.js"],
+      "hobbies": ["Designing", "Coding", "Tech Blogging"]
+    },
+    {
+      "id": 2,
+      "name": "Ihsan Ali Chandio",
+      "role": "Full Stack Web Developer",
+      "description": "Builds scalable and modern full-stack applications with both MERN and Laravel stacks with validations authorizations athentication.",
+      "image": "/pictures/team-2.jpg",
+      "technologies": ["React.js", "Node.js", "MongoDB", "Express.js", "PHP", "Laravel"],
+      "hobbies": ["UI Experiments", "Web Dev", "Football"]
+    },
+    {
+      "id": 3,
+      "name": "Raza Hussain Bhayo",
+      "role": "UI/UX Designer & Digital Marketer",
+      "description": "Manages all digital outreach, branding, and SEO for client and internal projects and UI/UX. Leads all design and architecture decisions.",
+      "image": "/pictures/team-3.jpg",
+      "technologies": ["SEO", "Google Ads", "Meta Ads", "Social Media Strategy","Figma","Adobe XD"],
+      "hobbies": ["Trend Analysis", "Reading", "Content Strategy"]
+    }
+  ]
+} 

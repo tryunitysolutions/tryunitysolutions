@@ -1,8 +1,8 @@
 [
   {
     "id": 1,
-    "title": "Fees Management System – Mr. Zaffer Hussain",
-    "description": "A custom-built Fees Management System designed for Mr. Zaffer Hussain's educational institution. This system simplifies the handling of student records, monthly fees, and collection reports through a secure and user-friendly admin panel.",
+    "title": "Fees Management System Using Php MySQL",
+    "description": "A custom-built Fees Management System designed for educational institution. This system simplifies the handling of student records, monthly fees, and collection reports through a secure and user-friendly admin panel.",
     "features": [
       "Student Admission & Profile Management",
       "Monthly Fees Generation & Payment Tracking",
@@ -13,9 +13,9 @@
       "Institute branding (custom logo, name, and contact settings)"
     ],
     "techStack": {
-      "frontend": "React.js",
-      "backend": "Node.js, Express.js",
-      "database": "MongoDB",
+      "frontend": "HTML,CSS,JS,BOOTSTRAP",
+      "backend": "PHP",
+      "database": "MYSQL",
       "design": "Minimal admin dashboard layout with responsive design"
     },
     "images": {

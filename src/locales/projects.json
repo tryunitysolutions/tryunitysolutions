@@ -23,7 +23,8 @@
       "studentManagement": "/pictures/student-management.png",
       "feeTracker": "/pictures/fee-tracker.png",
       "reporting": "/pictures/reporting.png"
-    }
+    },
+    "live": "not deployed"
   },
   {
     "id": 2,
@@ -49,6 +50,7 @@
       "studentManagement": "/pictures/FMS/student-management.png",
       "feeTracker": "/pictures/FMS/fee-tracker.png",
       "reporting": "/pictures/FMS/reporting.png"
-    }
+    },
+    "live": "https://github.com/tryunitysolutions/FMS-SOFTWARE"
   }
 ] 

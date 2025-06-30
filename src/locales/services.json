@@ -34,8 +34,5 @@
   "languages": [
     { "name": "English - Professional", "experience": "Professional proficiency with excellent communication and writing skills.", "percentage": 90, "icon": "FaGlobe" },
     { "name": "Urdu - Native", "experience": "Native proficiency in both spoken and written Urdu.", "percentage": 100, "icon": "FaGlobe" }
-  ],
-  "databases": [
-    { "name": "MongoDB", "experience": "1 year experience", "percentage": 50, "icon": "FaDatabase" }
   ]
 } 

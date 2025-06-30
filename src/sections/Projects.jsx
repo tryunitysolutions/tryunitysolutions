@@ -3,7 +3,8 @@ import { Box, Heading, SimpleGrid, Image, Text, useColorModeValue, VStack, HStac
 import { motion } from 'framer-motion'
 import projectsData from '../locales/projects.json'
 import { useLanguage } from '../LanguageContext'
-import { FaReact, FaNodeJs, FaDatabase, FaDesktop } from 'react-icons/fa'
+import { FaReact, FaNodeJs, FaDatabase, FaDesktop, FaHtml5, FaCss3Alt, FaJs, FaBootstrap, FaPhp } from 'react-icons/fa'
+import { SiElectron, SiMysql, SiChakraui, SiExpress, SiFramer } from 'react-icons/si'
 
 const MotionBox = motion.create(Box)
 const MotionHeading = motion.create(Heading)
@@ -47,7 +48,17 @@ const Projects = () => {
     'React.js': FaReact,
     'Node.js': FaNodeJs,
     'MongoDB': FaDatabase,
-    'Minimal admin dashboard layout with responsive design': FaDesktop
+    'Minimal admin dashboard layout with responsive design': FaDesktop,
+    'Electron': SiElectron,
+    'HTML': FaHtml5,
+    'CSS': FaCss3Alt,
+    'JS': FaJs,
+    'BOOTSTRAP': FaBootstrap,
+    'PHP': FaPhp,
+    'MYSQL': SiMysql,
+    'Chakra UI': SiChakraui,
+    'Framer Motion': SiFramer,
+    'Express.js': SiExpress
   }
 
   const openModal = (project) => {
@@ -145,26 +156,34 @@ const Projects = () => {
                 {selectedProject.techStack && (
                   <Box>
                     <Heading as="h4" size="md" mb={3} color={headingColor}>
-                      Tech Stack
+                      Technologies Used
                     </Heading>
                     <SimpleGrid columns={{ base: 2, md: 4 }} spacing={4}>
-                      {Object.entries(selectedProject.techStack).map(([key, value]) => {
-                        const TechIcon = techIcons[value]
-                        return (
-                          <Tag
-                            key={key}
-                            size="lg"
-                            borderRadius="full"
-                            variant="solid"
-                            bg={tagBg}
-                            color={tagColor}
-                          >
-                            <HStack spacing={2}>
-                              {TechIcon && <Icon as={TechIcon} />}
-                              <Text>{value}</Text>
-                            </HStack>
-                          </Tag>
-                        )
+                      {Object.entries(selectedProject.techStack).flatMap(([key, value]) => {
+                        // Split by comma and trim whitespace
+                        const techList = value.split(',').map(t => t.trim())
+                        return techList.map((tech, idx) => {
+                          const TechIcon = techIcons[tech]
+                          return (
+                            <Tag
+                              key={key + tech + idx}
+                              size="lg"
+                              borderRadius="full"
+                              variant="solid"
+                              bg={tagBg}
+                              padding={3}
+                              fontSize="15px"
+                              textAlign="center"
+                              fontWeight="bold"
+                              color={textColor}
+                            >
+                              <HStack spacing={2}>
+                                {TechIcon && <Icon as={TechIcon} />}
+                                <Text>{tech}</Text>
+                              </HStack>
+                            </Tag>
+                          )
+                        })
                       })}
                     </SimpleGrid>
                   </Box>
@@ -196,6 +215,16 @@ const Projects = () => {
           <ModalFooter>
             <Button colorScheme="brand" mr={3} onClick={closeModal}>
               Close
+            </Button>
+            <Button
+              as="a"
+              href={selectedProject?.live !== 'not deployed' ? selectedProject?.live : undefined}
+              target="_blank"
+              rel="noopener noreferrer"
+              colorScheme="teal"
+              isDisabled={selectedProject?.live === 'not deployed'}
+            >
+              See Project
             </Button>
           </ModalFooter>
         </ModalContent>

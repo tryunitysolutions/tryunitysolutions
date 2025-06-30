@@ -78,7 +78,8 @@ const skillIcons = {
   FaDatabase,
   SiMongodb,
   SiFirebase,
-  SiMysql
+  SiMysql,
+  fallback: FaDatabase // fallback icon
 }
 
 console.log('skillsData:', skillsData)
@@ -138,7 +139,10 @@ const Skills = () => {
             </MotionHeading>
             <SimpleGrid columns={{ base: 1, md: 2 }} spacing={6}>
               {data.skills.map((skill, index) => {
-                const SkillIcon = skillIcons[skill.icon] || FaDatabase;
+                const SkillIcon = skillIcons[skill.icon] || skillIcons.fallback;
+                if (!skillIcons[skill.icon]) {
+                  console.warn(`Icon "${skill.icon}" not found for skill "${skill.name}". Using fallback.`);
+                }
                 return (
                   <MotionBox
                     key={index}
@@ -149,6 +153,8 @@ const Skills = () => {
                     variants={itemVariants}
                     data-skill
                     cursor="pointer"
+                    whileHover={{ scale: 1.03, boxShadow: 'lg' }}
+                    transition={{ type: 'spring', stiffness: 300, damping: 20 }}
                   >
                     <Flex align="center" mb={2}>
                       {SkillIcon && <Icon as={SkillIcon} w={6} h={6} mr={3} color={iconColor} />}

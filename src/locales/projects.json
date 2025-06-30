@@ -24,5 +24,31 @@
       "feeTracker": "/pictures/fee-tracker.png",
       "reporting": "/pictures/reporting.png"
     }
+  },
+  {
+    "id": 2,
+    "title": "Fees Management System Using MERN Stack & Electron Js",
+    "description": "An advanced Fees Management System built as a desktop application using MERN Stack and Electron JS. This application streamlines the management of student records, monthly fees, and collection reports and a seamless user experience.",
+    "features": [
+      "Student Admission & Profile Management",
+      "Monthly Fees Generation & Payment Tracking",
+      "Printable Receipts",
+      "Real-time Reports of Collections and Dues",
+      "Secure Login Panel (Owner,Admin,Teacher,accountant)",
+      "Clean and responsive UI"
+    ],
+    "techStack": {
+      "frontend": "React.js, Chakra UI, Framer Motion",
+      "backend": "Node.js, Express.js",
+      "database": "MongoDB",
+      "design": "Minimal admin dashboard layout with responsive design",
+      "desktopFramework": "Electron"
+    },
+    "images": {
+      "dashboard": "/pictures/FMS/dashboard.png",
+      "studentManagement": "/pictures/FMS/student-management.png",
+      "feeTracker": "/pictures/FMS/fee-tracker.png",
+      "reporting": "/pictures/FMS/reporting.png"
+    }
   }
 ] 

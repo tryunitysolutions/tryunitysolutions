@@ -4,18 +4,29 @@
       "id": 1,
       "name": "Alee Raza",
       "role": "Founder & Cross-Platform Developer",
-      "description": "Expert in Flutter,Dart and Firebase, leads the team in building cross-platform applications with a focus on performance and user experience.",
+      "description": "Founder of TryUnity, expert in Flutter, Dart, and Firebase, specializes in building scalable, high-performance apps with clean architecture and engaging user experiences.",
       "image": "/pictures/team-1.jpg",
-      "technologies": ["Flutter", "Dart", "Firebase", "Figma", "GetX", "Next.js"],
+      "technologies": [
+        "Flutter", "Dart", "Firebase", "Figma", "GetX", "Next.js",
+        "Riverpod", "Provider", "Modular MVC/MVVM", "Clean Code Practices",
+        "Generation", "Scanning", "Thermal Printing", "Figma-based Prototyping",
+        "Responsive Layouts", "REST APIs", "Cloudinary", "EmailJS",
+        "Payment Gateways", "HTML", "CSS", "JavaScript", "WordPress",
+        "Shopify Customization", "Git", "Agile Process", "Cloud Deployment",
+        "Documentation"
+      ],
       "hobbies": ["Designing", "Coding", "Tech Blogging"]
     },
     {
       "id": 2,
       "name": "Ihsan Ali Chandio",
       "role": "Full Stack Web Developer",
-      "description": "Builds scalable and modern full-stack applications with both MERN and Laravel stacks with validations authorizations athentication.",
+      "description": "Expert in MERN and Laravel stacks, builds secure, scalable apps with robust authentication and modern UI/UX design.",
       "image": "/pictures/team-2.jpg",
-      "technologies": ["React.js", "Node.js", "MongoDB", "Express.js", "PHP", "Laravel"],
+      "technologies": ["React.js", "Node.js", "MongoDB", "Express.js", "PHP", "Laravel",
+        "MySQL", "HTML", "CSS", "JavaScript", "Bootstrap", "Chakra UI", "Tailwind CSS",
+        "REST APIs", "Git", "Agile Process", "Cloud Deployment", "Documentation", "Next.js", "REST APIs", "React Native", "Electron.js"
+      ],
       "hobbies": ["UI Experiments", "Web Dev", "Football"]
     },
     {

@@ -3,18 +3,6 @@
     "title": "Frontend Development",
     "skills": [
       {
-        "name": "HTML5",
-        "description": "Semantic markup, accessibility, and modern HTML features",
-        "icon": "FaHtml5",
-        "progress": 95
-      },
-      {
-        "name": "CSS3",
-        "description": "Flexbox, Grid, Animations, and Responsive Design",
-        "icon": "FaCss3",
-        "progress": 90
-      },
-      {
         "name": "JavaScript",
         "description": "ES6+, DOM Manipulation, and Modern JS Features",
         "icon": "FaJs",
@@ -27,9 +15,21 @@
         "progress": 90
       },
       {
-        "name": "Vue.js",
-        "description": "Vue 3, Composition API, and Vuex",
-        "icon": "FaVuejs",
+        "name": "Tailwind CSS",
+        "description": "Utility-first CSS Framework for Rapid UI Development",
+        "icon": "FaCss3Alt",
+        "progress": 85
+      },
+      {
+        "name": "Chakra UI",
+        "description": "Accessible and Modular React Component Library",
+        "icon": "FaReact",
+        "progress": 80
+      },
+      {
+        "name": "Framer Motion",
+        "description": "Animation Library for React Applications",
+        "icon": "FaReact",
         "progress": 80
       },
       {
@@ -37,6 +37,18 @@
         "description": "Responsive Grid System and Components",
         "icon": "FaBootstrap",
         "progress": 85
+      },
+      {
+        "name": "Next.js",
+        "description": "React Framework for Server-side Rendering and Static Site Generation",
+        "icon": "FaReact",
+        "progress": 85
+      },
+      {
+        "name": "MERN Stack",
+        "description": "MongoDB, Express.js, React.js, and Node.js",
+        "icon": "FaLayerGroup",
+        "progress": 80
       }
     ]
   },
@@ -60,6 +72,12 @@
         "description": "Laravel, WordPress, and Custom Solutions",
         "icon": "FaPhp",
         "progress": 75
+      },
+      {
+        "name": "Laravel",
+        "description": "PHP Framework for Web Applications",
+        "icon": "FaPhp",
+        "progress": 80
       }
     ]
   },
@@ -77,6 +95,59 @@
         "description": "Cross-platform Desktop Applications",
         "icon": "FaDesktop",
         "progress": 80
+      },
+      {
+        "name": "Flutter",
+        "description": "Cross-platform Mobile App Development with Dart",
+        "icon": "FaMobileAlt",
+        "progress": 80
+      },
+      {
+        "name": "Dart",
+        "description": "Programming Language for Flutter Development",
+        "icon": "FaCode",
+        "progress": 75
+      }
+    ]
+  },
+  "database": {
+    "title": "Database Management",
+    "skills": [
+      {
+        "name": "MySQL",
+        "description": "Relational Database Management System",
+        "icon": "FaDatabase",
+        "progress": 85
+      },
+      {
+        "name": "SQLite",
+        "description": "Lightweight Relational Database",
+        "icon": "FaDatabase",
+        "progress": 80
+      },
+      {
+        "name": "SQL Server",
+        "description": "Microsoft Relational Database Management System",
+        "icon": "FaDatabase",
+        "progress": 80
+      },
+      {
+        "name": "MongoDB",
+        "description": "NoSQL Database for Modern Applications",
+        "icon": "FaDatabase",
+        "progress": 85
+      },
+      {
+        "name": "Hive",
+        "description": "Data Warehousing and SQL-like Querying",
+        "icon": "FaDatabase",
+        "progress": 75
+      },
+      {
+        "name": "Firebase",
+        "description": "Backend-as-a-Service for Real-time Applications",
+        "icon": "FaCloud",
+        "progress": 85
       }
     ]
   },
@@ -97,4 +168,4 @@
       }
     ]
   }
-} 
+}

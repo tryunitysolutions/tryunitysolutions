@@ -59,6 +59,8 @@ const Sidebar = () => {
     setLang((prevLang) => (prevLang === 'en' ? 'ur' : 'en'))
   }
 
+  const currentHash = location.hash; // e.g. "#skills"
+
   return (
     <>
       {/* Desktop Sidebar */}
@@ -86,7 +88,7 @@ const Sidebar = () => {
             </Text> */}
           </Flex>
 
-          <VStack as="ul" spacing={1} w="full" alignItems="flex-start" flex="1" px="4">
+          <VStack as="ul" spacing={1} w="full" alignItems="flex-start" flex="1" px="4" style={{ listStyle: 'none', padding: 0, margin: 0 }}>
             {navItems.map((item) => (
               <Box as="li" key={item.id} w="full">
                 <Link to={`/#${item.id}`}>
@@ -98,11 +100,11 @@ const Sidebar = () => {
                     _hover={{
                       bg: useColorModeValue('gray.200', 'gray.700'),
                     }}
-                    bg={location.hash === `#${item.id}` ? activeLinkBg : 'transparent'}
-                    color={location.hash === `#${item.id}` ? activeLinkColor : useColorModeValue('darkGray', 'lightGray')}
+                    bg={currentHash === `#${item.id}` ? activeLinkBg : 'transparent'}
+                    color={currentHash === `#${item.id}` ? activeLinkColor : useColorModeValue('darkGray', 'lightGray')}
                   >
-                    <Box as={item.icon} size="18px" color={location.hash === `#${item.id}` ? activeLinkColor : iconColor} />
-                    <Text ml="3" fontSize="md" color={location.hash === `#${item.id}` ? activeLinkColor : useColorModeValue('darkGray', 'lightGray')}>
+                    <Box as={item.icon} size="18px" color={currentHash === `#${item.id}` ? activeLinkColor : iconColor} />
+                    <Text ml="3" fontSize="md" color={currentHash === `#${item.id}` ? activeLinkColor : useColorModeValue('darkGray', 'lightGray')}>
                       {item.label}
                     </Text>
                   </Flex>

@@ -79,8 +79,8 @@ const Projects = () => {
           <MotionBox
             key={project.id}
             variants={cardVariants}
-            whileHover={{ scale: 1.02, boxShadow: cardHoverShadow }}
-            transition={{ duration: 0.2 }}
+            whileHover={{ scale: 1.03, boxShadow: 'lg' }}
+            transition={{ type: 'spring', stiffness: 300, damping: 20 }}
             bg={cardBg}
             borderRadius="lg"
             overflow="hidden"

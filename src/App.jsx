@@ -21,23 +21,9 @@ function AppContent() {
   const location = useLocation()
   const currentSectionId = location.hash.substring(1) || 'welcome'
 
-  // Loader state for section transitions
-  const [showLoader, setShowLoader] = useState(true);
-  const [section, setSection] = useState(currentSectionId);
-
   useEffect(() => {
     document.documentElement.setAttribute('dir', lang === 'ur' ? 'rtl' : 'ltr');
   }, [lang]);
-
-  useEffect(() => {
-    // Show loader for 3s on section change
-    setShowLoader(true);
-    const timer = setTimeout(() => {
-      setShowLoader(false);
-    }, 3000);
-    setSection(currentSectionId);
-    return () => clearTimeout(timer);
-  }, [currentSectionId]);
 
   useEffect(() => {
     const element = document.getElementById(currentSectionId)
@@ -68,89 +54,85 @@ function AppContent() {
       </Box>
       <Sidebar />
       <Box flex="1" ml={{ base: 0, md: "250px" }} p={4}>
-        {showLoader ? (
-          <Loader />
-        ) : (
-          <AnimatePresence mode='wait'>
-            {section === 'welcome' && (
-              <motion.div
-                key="welcome"
-                variants={sectionVariants}
-                initial="hidden"
-                animate="visible"
-                exit="exit"
-              >
-                <Box id="welcome"><Hero /></Box>
-              </motion.div>
-            )}
-            {section === 'about' && (
-              <motion.div
-                key="about"
-                variants={sectionVariants}
-                initial="hidden"
-                animate="visible"
-                exit="exit"
-              >
-                <Box id="about"><About /></Box>
-              </motion.div>
-            )}
-            {section === 'services' && (
-              <motion.div
-                key="services"
-                variants={sectionVariants}
-                initial="hidden"
-                animate="visible"
-                exit="exit"
-              >
-                <Box id="services"><Services /></Box>
-              </motion.div>
-            )}
-            {section === 'skills' && (
-              <motion.div
-                key="skills"
-                variants={sectionVariants}
-                initial="hidden"
-                animate="visible"
-                exit="exit"
-              >
-                <Box id="skills"><Skills /></Box>
-              </motion.div>
-            )}
-            {section === 'projects' && (
-              <motion.div
-                key="projects"
-                variants={sectionVariants}
-                initial="hidden"
-                animate="visible"
-                exit="exit"
-              >
-                <Box id="projects"><Projects /></Box>
-              </motion.div>
-            )}
-            {section === 'team' && (
-              <motion.div
-                key="team"
-                variants={sectionVariants}
-                initial="hidden"
-                animate="visible"
-                exit="exit"
-              >
-                <Box id="team"><Team /></Box>
-              </motion.div>
-            )}
-            {section === 'contact' && (
-              <motion.div
-                key="contact"
-                variants={sectionVariants}
-                initial="hidden"
-                animate="visible"
-                exit="exit"
-              >
-                <Box id="contact"><Contact /></Box>
-              </motion.div>
-            )}
-          </AnimatePresence>
-        )}
+        <AnimatePresence mode='wait'>
+          {currentSectionId === 'welcome' && (
+            <motion.div
+              key="welcome"
+              variants={sectionVariants}
+              initial="hidden"
+              animate="visible"
+              exit="exit"
+            >
+              <Box id="welcome"><Hero /></Box>
+            </motion.div>
+          )}
+          {currentSectionId === 'about' && (
+            <motion.div
+              key="about"
+              variants={sectionVariants}
+              initial="hidden"
+              animate="visible"
+              exit="exit"
+            >
+              <Box id="about"><About /></Box>
+            </motion.div>
+          )}
+          {currentSectionId === 'services' && (
+            <motion.div
+              key="services"
+              variants={sectionVariants}
+              initial="hidden"
+              animate="visible"
+              exit="exit"
+            >
+              <Box id="services"><Services /></Box>
+            </motion.div>
+          )}
+          {currentSectionId === 'skills' && (
+            <motion.div
+              key="skills"
+              variants={sectionVariants}
+              initial="hidden"
+              animate="visible"
+              exit="exit"
+            >
+              <Box id="skills"><Skills /></Box>
+            </motion.div>
+          )}
+          {currentSectionId === 'projects' && (
+            <motion.div
+              key="projects"
+              variants={sectionVariants}
+              initial="hidden"
+              animate="visible"
+              exit="exit"
+            >
+              <Box id="projects"><Projects /></Box>
+            </motion.div>
+          )}
+          {currentSectionId === 'team' && (
+            <motion.div
+              key="team"
+              variants={sectionVariants}
+              initial="hidden"
+              animate="visible"
+              exit="exit"
+            >
+              <Box id="team"><Team /></Box>
+            </motion.div>
+          )}
+          {currentSectionId === 'contact' && (
+            <motion.div
+              key="contact"
+              variants={sectionVariants}
+              initial="hidden"
+              animate="visible"
+              exit="exit"
+            >
+              <Box id="contact"><Contact /></Box>
+            </motion.div>
+          )}
+        </AnimatePresence>
       </Box>
     </Flex>
   )

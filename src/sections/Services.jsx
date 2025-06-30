@@ -110,6 +110,8 @@ const Services = () => {
                   variants={itemVariants}
                   data-service
                   cursor="pointer"
+                  whileHover={{ scale: 1.03, boxShadow: 'lg' }}
+                  transition={{ type: 'spring', stiffness: 300, damping: 20 }}
                   onClick={() => openModal(item)}
                 >
                   <Flex align="center" mb={2}>
@@ -142,6 +144,8 @@ const Services = () => {
                     variants={itemVariants}
                     data-service
                     cursor="pointer"
+                    whileHover={{ scale: 1.03, boxShadow: 'lg' }}
+                    transition={{ type: 'spring', stiffness: 300, damping: 20 }}
                     onClick={() => openModal(item)}
                   >
                     <Flex justify="space-between" mb={2}>
@@ -177,6 +181,8 @@ const Services = () => {
                     variants={itemVariants}
                     data-service
                     cursor="pointer"
+                    whileHover={{ scale: 1.03, boxShadow: 'lg' }}
+                    transition={{ type: 'spring', stiffness: 300, damping: 20 }}
                     onClick={() => openModal(item)}
                   >
                     <Flex justify="space-between" mb={2}>

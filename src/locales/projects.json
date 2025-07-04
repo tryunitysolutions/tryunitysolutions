@@ -52,5 +52,38 @@
       "reporting": "/pictures/FMS/reporting.png"
     },
     "live": "https://github.com/tryunitysolutions/FMS-SOFTWARE"
+  },
+  {
+    "id": 3,
+    "title": "EMS – Employee Management System (Mobile App UI)",
+    "description": "EMS is a role-based mobile application designed to streamline internal task management, track employee attendance, monitor performance, and simplify payroll analysis — all from a centralized and intuitive platform. This app is built specifically for organizations to empower HR, Admin, and Client roles with real-time insights into workforce operations.",
+    "features": [
+      "Email & Social Authentication (Google, Apple)",
+      "Role-Based Dashboards (HR, Admin, Client)",
+      "Daily Task Planning & Performance Feedback",
+      "Automated Attendance & Payroll Insights",
+      "Task Tracking with Visual Performance Indicators",
+      "Clean and Responsive UI for Mobile (6.1\" screen)"
+    ],
+    "techStack": {
+      "frontend": "Flutter",
+      "backend": "Firebase (Auth, Firestore, Cloud Functions)",
+      "database": "Firestore",
+      "storage": "Cloudinary",
+      "stateManagement": "GetX",
+      "design": "Figma-based, modular UI system"
+    },
+    "images": {
+      "dashboard": "/pictures/EMS/dashboard.png",
+      "taskManagement": "/pictures/EMS/task-management.png",
+      "attendance": "/pictures/EMS/attendance.png",
+      "performance": "/pictures/EMS/performance.png"
+    },
+    "live": {
+      "figma": "not deployed",
+      "behance": "not deployed",
+      "github": "not deployed"
+    }
   }
+  
 ] 

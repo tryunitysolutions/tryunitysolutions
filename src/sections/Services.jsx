@@ -29,6 +29,7 @@ import {
 import servicesData from '../locales/services.json'
 import { useLanguage } from '../LanguageContext'
 import { motion } from 'framer-motion'
+import { Helmet } from "react-helmet";
 
 const MotionBox = motion.create(Box)
 const MotionHeading = motion.create(Heading)
@@ -78,61 +79,35 @@ const Services = () => {
   }
 
   return (
-    <MotionBox
-      id="services"
-      p={8}
-      bg={sectionBg}
-      minH="100vh"
-      initial="initial"
-      whileInView="whileInView"
-      viewport={{ once: true, amount: 0.3 }}
-    >
-      <MotionHeading as="h2" size="xl" mb={8} textAlign="center" color={headingColor} variants={fadeIn}>
-        {t('sections.services')}
-      </MotionHeading>
+    <>
+      <Helmet>
+        <title>Our Services - MERN Stack Development | Try Unity Solutions</title>
+        <meta name="description" content="Discover the range of MERN stack development services offered by Try Unity Solutions, including web app development, UI/UX design, and more." />
+        <meta name="keywords" content="MERN stack services, web development, UI/UX design, Try Unity Solutions services" />
+        <meta name="author" content="Try Unity Solutions" />
+        <link rel="canonical" href="https://tryunitysolutions.vercel.app/#services" />
+      </Helmet>
+      <MotionBox
+        id="services"
+        p={8}
+        bg={sectionBg}
+        minH="100vh"
+        initial="initial"
+        whileInView="whileInView"
+        viewport={{ once: true, amount: 0.3 }}
+      >
+        <MotionHeading as="h2" size="xl" mb={8} textAlign="center" color={headingColor} variants={fadeIn}>
+          {t('sections.services')}
+        </MotionHeading>
 
-      <VStack spacing={8} align="stretch">
-        {/* Core Services Section */}
-        <MotionBox variants={itemVariants}>
-          <MotionHeading as="h3" size="lg" mb={4} color={subHeadingColor} variants={fadeIn}>
-            {t('services.coreServicesTitle')}
-          </MotionHeading>
-          <SimpleGrid columns={{ base: 1, md: 2 }} spacing={6}>
-            {servicesData.coreServices.map((item, index) => {
-              const ServiceIcon = serviceIcons[item.icon];
-              return (
-                <MotionBox 
-                  key={index} 
-                  p={4} 
-                  borderWidth="1px" 
-                  borderRadius="lg" 
-                  shadow="md" 
-                  variants={itemVariants}
-                  data-service
-                  cursor="pointer"
-                  whileHover={{ scale: 1.03, boxShadow: 'lg' }}
-                  transition={{ type: 'spring', stiffness: 300, damping: 20 }}
-                  onClick={() => openModal(item)}
-                >
-                  <Flex align="center" mb={2}>
-                    {ServiceIcon && <Icon as={ServiceIcon} w={6} h={6} mr={3} color={iconColor} />}
-                    <MotionText fontWeight="bold" fontSize="lg" color={textColor} variants={fadeIn}>{item.name}</MotionText>
-                  </Flex>
-                  <MotionText fontSize="md" color={textColor} variants={fadeIn}>{item.description}</MotionText>
-                </MotionBox>
-              )
-            })}
-          </SimpleGrid>
-        </MotionBox>
-
-        {/* Languages Section */}
-        {servicesData.languages && (
+        <VStack spacing={8} align="stretch">
+          {/* Core Services Section */}
           <MotionBox variants={itemVariants}>
             <MotionHeading as="h3" size="lg" mb={4} color={subHeadingColor} variants={fadeIn}>
-              Languages
+              {t('services.coreServicesTitle')}
             </MotionHeading>
             <SimpleGrid columns={{ base: 1, md: 2 }} spacing={6}>
-              {servicesData.languages.map((item, index) => {
+              {servicesData.coreServices.map((item, index) => {
                 const ServiceIcon = serviceIcons[item.icon];
                 return (
                   <MotionBox 
@@ -148,58 +123,93 @@ const Services = () => {
                     transition={{ type: 'spring', stiffness: 300, damping: 20 }}
                     onClick={() => openModal(item)}
                   >
-                    <Flex justify="space-between" mb={2}>
-                      <Flex align="center">
-                        {ServiceIcon && <Icon as={ServiceIcon} w={5} h={5} mr={2} color={iconColor} />}
-                        <MotionText fontWeight="bold" color={textColor} variants={fadeIn}>{item.name}</MotionText>
-                      </Flex>
-                      <MotionText fontSize="sm" color={textColor} variants={fadeIn}>{item.experience}</MotionText>
+                    <Flex align="center" mb={2}>
+                      {ServiceIcon && <Icon as={ServiceIcon} w={6} h={6} mr={3} color={iconColor} />}
+                      <MotionText fontWeight="bold" fontSize="lg" color={textColor} variants={fadeIn}>{item.name}</MotionText>
                     </Flex>
+                    <MotionText fontSize="md" color={textColor} variants={fadeIn}>{item.description}</MotionText>
                   </MotionBox>
                 )
               })}
             </SimpleGrid>
           </MotionBox>
-        )}
 
-        {/* Databases Section */}
-        {servicesData.databases && (
-          <MotionBox variants={itemVariants}>
-            <MotionHeading as="h3" size="lg" mb={4} color={subHeadingColor} variants={fadeIn}>
-              Databases
-            </MotionHeading>
-            <SimpleGrid columns={{ base: 1, md: 2 }} spacing={6}>
-              {servicesData.databases.map((item, index) => {
-                const ServiceIcon = serviceIcons[item.icon];
-                return (
-                  <MotionBox 
-                    key={index} 
-                    p={4} 
-                    borderWidth="1px" 
-                    borderRadius="lg" 
-                    shadow="md" 
-                    variants={itemVariants}
-                    data-service
-                    cursor="pointer"
-                    whileHover={{ scale: 1.03, boxShadow: 'lg' }}
-                    transition={{ type: 'spring', stiffness: 300, damping: 20 }}
-                    onClick={() => openModal(item)}
-                  >
-                    <Flex justify="space-between" mb={2}>
-                      <Flex align="center">
-                        {ServiceIcon && <Icon as={ServiceIcon} w={5} h={5} mr={2} color={iconColor} />}
-                        <MotionText fontWeight="bold" color={textColor} variants={fadeIn}>{item.name}</MotionText>
+          {/* Languages Section */}
+          {servicesData.languages && (
+            <MotionBox variants={itemVariants}>
+              <MotionHeading as="h3" size="lg" mb={4} color={subHeadingColor} variants={fadeIn}>
+                Languages
+              </MotionHeading>
+              <SimpleGrid columns={{ base: 1, md: 2 }} spacing={6}>
+                {servicesData.languages.map((item, index) => {
+                  const ServiceIcon = serviceIcons[item.icon];
+                  return (
+                    <MotionBox 
+                      key={index} 
+                      p={4} 
+                      borderWidth="1px" 
+                      borderRadius="lg" 
+                      shadow="md" 
+                      variants={itemVariants}
+                      data-service
+                      cursor="pointer"
+                      whileHover={{ scale: 1.03, boxShadow: 'lg' }}
+                      transition={{ type: 'spring', stiffness: 300, damping: 20 }}
+                      onClick={() => openModal(item)}
+                    >
+                      <Flex justify="space-between" mb={2}>
+                        <Flex align="center">
+                          {ServiceIcon && <Icon as={ServiceIcon} w={5} h={5} mr={2} color={iconColor} />}
+                          <MotionText fontWeight="bold" color={textColor} variants={fadeIn}>{item.name}</MotionText>
+                        </Flex>
+                        <MotionText fontSize="sm" color={textColor} variants={fadeIn}>{item.experience}</MotionText>
                       </Flex>
-                      <MotionText fontSize="sm" color={textColor} variants={fadeIn}>{item.experience}</MotionText>
-                    </Flex>
-                  </MotionBox>
-                )
-              })}
-            </SimpleGrid>
-          </MotionBox>
-        )}
-      </VStack>
-    </MotionBox>
+                    </MotionBox>
+                  )
+                })}
+              </SimpleGrid>
+            </MotionBox>
+          )}
+
+          {/* Databases Section */}
+          {servicesData.databases && (
+            <MotionBox variants={itemVariants}>
+              <MotionHeading as="h3" size="lg" mb={4} color={subHeadingColor} variants={fadeIn}>
+                Databases
+              </MotionHeading>
+              <SimpleGrid columns={{ base: 1, md: 2 }} spacing={6}>
+                {servicesData.databases.map((item, index) => {
+                  const ServiceIcon = serviceIcons[item.icon];
+                  return (
+                    <MotionBox 
+                      key={index} 
+                      p={4} 
+                      borderWidth="1px" 
+                      borderRadius="lg" 
+                      shadow="md" 
+                      variants={itemVariants}
+                      data-service
+                      cursor="pointer"
+                      whileHover={{ scale: 1.03, boxShadow: 'lg' }}
+                      transition={{ type: 'spring', stiffness: 300, damping: 20 }}
+                      onClick={() => openModal(item)}
+                    >
+                      <Flex justify="space-between" mb={2}>
+                        <Flex align="center">
+                          {ServiceIcon && <Icon as={ServiceIcon} w={5} h={5} mr={2} color={iconColor} />}
+                          <MotionText fontWeight="bold" color={textColor} variants={fadeIn}>{item.name}</MotionText>
+                        </Flex>
+                        <MotionText fontSize="sm" color={textColor} variants={fadeIn}>{item.experience}</MotionText>
+                      </Flex>
+                    </MotionBox>
+                  )
+                })}
+              </SimpleGrid>
+            </MotionBox>
+          )}
+        </VStack>
+      </MotionBox>
+    </>
   )
 }
 

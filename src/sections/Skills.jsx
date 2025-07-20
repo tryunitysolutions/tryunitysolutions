@@ -49,6 +49,7 @@ import skillsData from '../locales/skills.json'
 import { useLanguage } from '../LanguageContext'
 import { motion } from 'framer-motion'
 import { AtSignIcon, StarIcon, InfoIcon } from '@chakra-ui/icons'
+import { Helmet } from "react-helmet";
 
 const MotionBox = motion.create(Box)
 const MotionHeading = motion.create(Heading)
@@ -114,74 +115,83 @@ const Skills = () => {
   }
 
   return (
-    <MotionBox
-      id="skills"
-      p={8}
-      bg={sectionBg}
-      minH="100vh"
-      initial="initial"
-      whileInView="whileInView"
-      viewport={{ once: true, amount: 0.3 }}
-    >
-      <MotionHeading as="h2" size="xl" mb={8} textAlign="center" color={headingColor} variants={fadeIn}>
-        {t('sections.skills')}
-      </MotionHeading>
+    <>
+      <Helmet>
+        <title>Our Skills - MERN Stack & Web Technologies | Try Unity Solutions</title>
+        <meta name="description" content="See the technical skills and expertise of Try Unity Solutions in MERN stack, frontend, backend, and modern web technologies." />
+        <meta name="keywords" content="MERN stack skills, web development skills, frontend, backend, Try Unity Solutions expertise" />
+        <meta name="author" content="Try Unity Solutions" />
+        <link rel="canonical" href="https://tryunitysolutions.vercel.app/#skills" />
+      </Helmet>
+      <MotionBox
+        id="skills"
+        p={8}
+        bg={sectionBg}
+        minH="100vh"
+        initial="initial"
+        whileInView="whileInView"
+        viewport={{ once: true, amount: 0.3 }}
+      >
+        <MotionHeading as="h2" size="xl" mb={8} textAlign="center" color={headingColor} variants={fadeIn}>
+          {t('sections.skills')}
+        </MotionHeading>
 
-      {(!skillsData || Object.keys(skillsData).length === 0) && (
-        <Text color="red.500" textAlign="center">No skills data loaded.</Text>
-      )}
+        {(!skillsData || Object.keys(skillsData).length === 0) && (
+          <Text color="red.500" textAlign="center">No skills data loaded.</Text>
+        )}
 
-      <VStack spacing={8} align="stretch">
-        {Object.entries(skillsData).map(([category, data]) => (
-          <MotionBox key={category} variants={itemVariants}>
-            <MotionHeading as="h3" size="lg" mb={4} color={subHeadingColor} variants={fadeIn}>
-              {data.title}
-            </MotionHeading>
-            <SimpleGrid columns={{ base: 1, md: 2 }} spacing={6}>
-              {data.skills.map((skill, index) => {
-                const SkillIcon = skillIcons[skill.icon] || skillIcons.fallback;
-                if (!skillIcons[skill.icon]) {
-                  console.warn(`Icon "${skill.icon}" not found for skill "${skill.name}". Using fallback.`);
-                }
-                return (
-                  <MotionBox
-                    key={index}
-                    p={4}
-                    borderWidth="1px"
-                    borderRadius="lg"
-                    shadow="md"
-                    variants={itemVariants}
-                    data-skill
-                    cursor="pointer"
-                    whileHover={{ scale: 1.03, boxShadow: 'lg' }}
-                    transition={{ type: 'spring', stiffness: 300, damping: 20 }}
-                  >
-                    <Flex align="center" mb={2}>
-                      {SkillIcon && <Icon as={SkillIcon} w={6} h={6} mr={3} color={iconColor} />}
-                      <MotionText fontWeight="bold" fontSize="lg" color={textColor} variants={fadeIn}>
-                        {skill.name}
-                      </MotionText>
-                    </Flex>
-                    <MotionText fontSize="md" color={textColor} mb={3} variants={fadeIn}>
-                      {skill.description}
-                    </MotionText>
-                    <MotionProgress
-                      value={skill.progress}
-                      size="sm"
-                      colorScheme="brand"
-                      bg={progressBg}
-                      borderRadius="full"
-                      variants={fadeIn}
+        <VStack spacing={8} align="stretch">
+          {Object.entries(skillsData).map(([category, data]) => (
+            <MotionBox key={category} variants={itemVariants}>
+              <MotionHeading as="h3" size="lg" mb={4} color={subHeadingColor} variants={fadeIn}>
+                {data.title}
+              </MotionHeading>
+              <SimpleGrid columns={{ base: 1, md: 2 }} spacing={6}>
+                {data.skills.map((skill, index) => {
+                  const SkillIcon = skillIcons[skill.icon] || skillIcons.fallback;
+                  if (!skillIcons[skill.icon]) {
+                    console.warn(`Icon "${skill.icon}" not found for skill "${skill.name}". Using fallback.`);
+                  }
+                  return (
+                    <MotionBox
+                      key={index}
+                      p={4}
+                      borderWidth="1px"
+                      borderRadius="lg"
+                      shadow="md"
+                      variants={itemVariants}
+                      data-skill
+                      cursor="pointer"
+                      whileHover={{ scale: 1.03, boxShadow: 'lg' }}
+                      transition={{ type: 'spring', stiffness: 300, damping: 20 }}
                     >
-                    </MotionProgress>
-                  </MotionBox>
-                )
-              })}
-            </SimpleGrid>
-          </MotionBox>
-        ))}
-      </VStack>
-    </MotionBox>
+                      <Flex align="center" mb={2}>
+                        {SkillIcon && <Icon as={SkillIcon} w={6} h={6} mr={3} color={iconColor} />}
+                        <MotionText fontWeight="bold" fontSize="lg" color={textColor} variants={fadeIn}>
+                          {skill.name}
+                        </MotionText>
+                      </Flex>
+                      <MotionText fontSize="md" color={textColor} mb={3} variants={fadeIn}>
+                        {skill.description}
+                      </MotionText>
+                      <MotionProgress
+                        value={skill.progress}
+                        size="sm"
+                        colorScheme="brand"
+                        bg={progressBg}
+                        borderRadius="full"
+                        variants={fadeIn}
+                      >
+                      </MotionProgress>
+                    </MotionBox>
+                  )
+                })}
+              </SimpleGrid>
+            </MotionBox>
+          ))}
+        </VStack>
+      </MotionBox>
+    </>
   )
 }
 

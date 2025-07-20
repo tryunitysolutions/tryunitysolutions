@@ -24,6 +24,7 @@ import { motion } from 'framer-motion'
 import teamData from '../locales/team.json'
 import { useLanguage } from '../LanguageContext'
 import { FaCode, FaHeart } from 'react-icons/fa'
+import { Helmet } from "react-helmet";
 
 const MotionBox = motion.create(Box)
 const MotionHeading = motion.create(Heading)
@@ -74,139 +75,148 @@ const Team = () => {
   }
 
   return (
-    <MotionBox
-      id="team"
-      p={8}
-      bg={sectionBg}
-      minH="100vh"
-      initial="initial"
-      whileInView="whileInView"
-      viewport={{ once: true, amount: 0.3 }}
-    >
-      <MotionHeading as="h2" size="xl" mb={8} textAlign="center" color={headingColor} variants={fadeIn}>
-        {t('sections.team')}
-      </MotionHeading>
+    <>
+      <Helmet>
+        <title>Meet the Team - Try Unity Solutions</title>
+        <meta name="description" content="Meet the talented team behind Try Unity Solutions. Our experts deliver custom MERN stack web applications for your business." />
+        <meta name="keywords" content="Try Unity Solutions team, web development experts, MERN stack developers, business solutions team" />
+        <meta name="author" content="Try Unity Solutions" />
+        <link rel="canonical" href="https://tryunitysolutions.vercel.app/#team" />
+      </Helmet>
+      <MotionBox
+        id="team"
+        p={8}
+        bg={sectionBg}
+        minH="100vh"
+        initial="initial"
+        whileInView="whileInView"
+        viewport={{ once: true, amount: 0.3 }}
+      >
+        <MotionHeading as="h2" size="xl" mb={8} textAlign="center" color={headingColor} variants={fadeIn}>
+          {t('sections.team')}
+        </MotionHeading>
 
-      <SimpleGrid columns={{ base: 1, md: 2, lg: 3 }} spacing={8}>
-        {teamData.members.map((member) => (
-          <MotionBox
-            key={member.id}
-            variants={cardVariants}
-            whileHover={{ scale: 1.03, boxShadow: 'lg' }}
-            transition={{ type: 'spring', stiffness: 300, damping: 20 }}
-            bg={cardBg}
-            borderRadius="lg"
-            overflow="hidden"
-            borderTopRightRadius="3xl"
-            data-team-member
-            cursor="pointer"
-            onClick={() => openModal(member)}
-          >
-            <MotionImage
-              src={member.image}
-              alt={member.name}
-              w="full"
-              h="300px"
-              objectFit="cover"
-            />
-            <Box p={6}>
-              <MotionHeading as="h3" size="lg" mb={2} color={headingColor} variants={fadeIn}>
-                {member.name}
-              </MotionHeading>
-              
-              <MotionText fontSize="md" fontWeight="medium" color="brand.500" mb={3} variants={fadeIn}>
-                {member.role}
-              </MotionText>
-              
-              <MotionText fontSize="md" color={textColor} mb={4} noOfLines={3} variants={fadeIn}>
-                {member.description}
-              </MotionText>
-            </Box>
-          </MotionBox>
-        ))}
-      </SimpleGrid>
+        <SimpleGrid columns={{ base: 1, md: 2, lg: 3 }} spacing={8}>
+          {teamData.members.map((member) => (
+            <MotionBox
+              key={member.id}
+              variants={cardVariants}
+              whileHover={{ scale: 1.03, boxShadow: 'lg' }}
+              transition={{ type: 'spring', stiffness: 300, damping: 20 }}
+              bg={cardBg}
+              borderRadius="lg"
+              overflow="hidden"
+              borderTopRightRadius="3xl"
+              data-team-member
+              cursor="pointer"
+              onClick={() => openModal(member)}
+            >
+              <MotionImage
+                src={member.image}
+                alt={member.name}
+                w="full"
+                h="300px"
+                objectFit="cover"
+              />
+              <Box p={6}>
+                <MotionHeading as="h3" size="lg" mb={2} color={headingColor} variants={fadeIn}>
+                  {member.name}
+                </MotionHeading>
+                
+                <MotionText fontSize="md" fontWeight="medium" color="brand.500" mb={3} variants={fadeIn}>
+                  {member.role}
+                </MotionText>
+                
+                <MotionText fontSize="md" color={textColor} mb={4} noOfLines={3} variants={fadeIn}>
+                  {member.description}
+                </MotionText>
+              </Box>
+            </MotionBox>
+          ))}
+        </SimpleGrid>
 
-      <Modal isOpen={isModalOpen} onClose={closeModal} size="xl">
-        <ModalOverlay />
-        <ModalContent>
-          <ModalHeader>{selectedMember?.name}</ModalHeader>
-          <ModalCloseButton />
-          <ModalBody>
-            {selectedMember && (
-              <VStack spacing={6} align="stretch">
-                <Flex direction={{ base: 'column', md: 'row' }} gap={6}>
-                  <Image
-                    src={selectedMember.image}
-                    alt={selectedMember.name}
-                    w={{ base: 'full', md: '200px' }}
-                    h={{ base: '300px', md: '200px' }}
-                    objectFit="cover"
-                    borderRadius="lg"
-                  />
+        <Modal isOpen={isModalOpen} onClose={closeModal} size="xl">
+          <ModalOverlay />
+          <ModalContent>
+            <ModalHeader>{selectedMember?.name}</ModalHeader>
+            <ModalCloseButton />
+            <ModalBody>
+              {selectedMember && (
+                <VStack spacing={6} align="stretch">
+                  <Flex direction={{ base: 'column', md: 'row' }} gap={6}>
+                    <Image
+                      src={selectedMember.image}
+                      alt={selectedMember.name}
+                      w={{ base: 'full', md: '200px' }}
+                      h={{ base: '300px', md: '200px' }}
+                      objectFit="cover"
+                      borderRadius="lg"
+                    />
+                    <Box>
+                      <Text fontSize="lg" fontWeight="medium" color="brand.500" mb={2}>
+                        {selectedMember.role}
+                      </Text>
+                      <Text color={textColor}>{selectedMember.description}</Text>
+                    </Box>
+                  </Flex>
+
                   <Box>
-                    <Text fontSize="lg" fontWeight="medium" color="brand.500" mb={2}>
-                      {selectedMember.role}
-                    </Text>
-                    <Text color={textColor}>{selectedMember.description}</Text>
+                    <HStack mb={3}>
+                      <Icon as={FaCode} color="brand.500" />
+                      <Heading as="h4" size="md" color={headingColor}>
+                        Technologies
+                      </Heading>
+                    </HStack>
+                    <Flex wrap="wrap" gap={2}>
+                      {selectedMember.technologies.map((tech, index) => (
+                        <Tag
+                          key={index}
+                          size="md"
+                          borderRadius="full"
+                          variant="solid"
+                          bg={tagBg}
+                          color={tagColor}
+                        >
+                          {tech}
+                        </Tag>
+                      ))}
+                    </Flex>
                   </Box>
-                </Flex>
 
-                <Box>
-                  <HStack mb={3}>
-                    <Icon as={FaCode} color="brand.500" />
-                    <Heading as="h4" size="md" color={headingColor}>
-                      Technologies
-                    </Heading>
-                  </HStack>
-                  <Flex wrap="wrap" gap={2}>
-                    {selectedMember.technologies.map((tech, index) => (
-                      <Tag
-                        key={index}
-                        size="md"
-                        borderRadius="full"
-                        variant="solid"
-                        bg={tagBg}
-                        color={tagColor}
-                      >
-                        {tech}
-                      </Tag>
-                    ))}
-                  </Flex>
-                </Box>
-
-                <Box>
-                  <HStack mb={3}>
-                    <Icon as={FaHeart} color="brand.500" />
-                    <Heading as="h4" size="md" color={headingColor}>
-                      Hobbies
-                    </Heading>
-                  </HStack>
-                  <Flex wrap="wrap" gap={2}>
-                    {selectedMember.hobbies.map((hobby, index) => (
-                      <Tag
-                        key={index}
-                        size="md"
-                        borderRadius="full"
-                        variant="solid"
-                        bg={tagBg}
-                        color={tagColor}
-                      >
-                        {hobby}
-                      </Tag>
-                    ))}
-                  </Flex>
-                </Box>
-              </VStack>
-            )}
-          </ModalBody>
-          <ModalFooter>
-            <Button colorScheme="brand" mr={3} onClick={closeModal}>
-              Close
-            </Button>
-          </ModalFooter>
-        </ModalContent>
-      </Modal>
-    </MotionBox>
+                  <Box>
+                    <HStack mb={3}>
+                      <Icon as={FaHeart} color="brand.500" />
+                      <Heading as="h4" size="md" color={headingColor}>
+                        Hobbies
+                      </Heading>
+                    </HStack>
+                    <Flex wrap="wrap" gap={2}>
+                      {selectedMember.hobbies.map((hobby, index) => (
+                        <Tag
+                          key={index}
+                          size="md"
+                          borderRadius="full"
+                          variant="solid"
+                          bg={tagBg}
+                          color={tagColor}
+                        >
+                          {hobby}
+                        </Tag>
+                      ))}
+                    </Flex>
+                  </Box>
+                </VStack>
+              )}
+            </ModalBody>
+            <ModalFooter>
+              <Button colorScheme="brand" mr={3} onClick={closeModal}>
+                Close
+              </Button>
+            </ModalFooter>
+          </ModalContent>
+        </Modal>
+      </MotionBox>
+    </>
   )
 }
 
